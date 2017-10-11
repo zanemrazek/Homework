@@ -28,17 +28,17 @@ public class Dates
     
     monthValid = (month >=1 && month =< 12);
     
-    yearValid = (year >= 1000 && year =< 1999);
+    yearValid = (year >= 2000 && year =< 2999);
  
     leapYear = (year % 400 == 0 || year % 4 == 0 && year / 100 != 0)
  
   	if (month == 1)
       day = (31 >= day && 1 =< day);
     
-    else if (leapYear && month == 2)
+    else if (leapYear == true && month == 2)
       day = (28 >= day && 1 =< day);
-    
-    else if (month == 2)
+   
+    else if (leapYear == false && month == 2)
       day = (29 >= day && 1 =< day);
       
     else if (month == 3)
@@ -70,6 +70,9 @@ public class Dates
     
     else if (month == 12)
       day = (31 >= day && 1 =< day);
- 
+ if (dayValid == true && monthValid == true && yearValid == true)
+ 	System.out.println("The date is valid.");
+ else (dayValid == false && monthValid == false && yearValid == false)
+ 	System.out.println("The date is not valid");
 	}
 }
